@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+# Frontend do Sistema de Gerenciamento de Usuários
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
 
-Currently, two official plugins are available:
+Este projeto é a parte frontend de um sistema de gerenciamento de usuários. Ele permite visualizar, editar e enviar mensagens para os usuários cadastrados. Além disso, o sistema suporta a atualização do tipo de plano e saldo para usuários com plano pré-pago, e o limite de mensagens para usuários com plano pós-pago.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- React
+- Axios
+- React Router Dom
+- CSS
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Funcionalidades
 
-- Configure the top-level `parserOptions` property like this:
+- Listagem de usuários
+- Detalhamento de usuário
+- Edição de informações de usuário
+- Envio de mensagens para usuários
+- Adição de saldo para usuários com plano pré-pago
+- Atualização do limite de mensagens para usuários com plano pós-pago
+- Alteração do tipo de plano do usuário
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Premissas Assumidas
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. **Endpoints de API**: O frontend se comunica com uma API backend que está sendo executada no `localhost` na porta `3010`.
+2. **Tipos de Plano**: Existem dois tipos de plano - `PRE_PAID` (pré-pago) e `POST_PAID` (pós-pago).
+3. **Campos Obrigatórios**: Alguns campos são obrigatórios durante a criação e edição de usuários, como `email`, `username`, `cpf`, `cnpj`, `password`, `phone` e `companyName`.
+
+## Pré-requisitos
+
+- Node.js instalado
+- npm ou yarn instalado
+
+## Instalação
+
+1. Clone o repositório:
+    ```sh
+    git clone <URL_DO_REPOSITORIO>
+    ```
+2. Navegue até o diretório do frontend:
+    ```sh
+    cd caminho/do/frontend
+    ```
+3. Instale as dependências:
+    ```sh
+    npm install
+    # ou
+    yarn install
+    ```
+
+## Execução
+
+Para iniciar a aplicação em modo de desenvolvimento, execute:
+```sh
+npm run dev
+# ou
+yarn dev
